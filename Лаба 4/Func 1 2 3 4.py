@@ -50,7 +50,6 @@ def valid_y():
     b=''
     print("Design your float y")
     while (not re.match(pattern_float,b) and not re.match(pattern_int,b)):
-        
         b = input("Please print correct data:  ")
     return float(b)
 

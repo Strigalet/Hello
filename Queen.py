@@ -1,18 +1,21 @@
-while True:
-  i=0
-  x=[]
-  y=[]
-  a='NO'
-  while i < 8:
-   x_and_y = input('Введите координаты ферзя: ').split()
-   x.append(int(x_and_y[0]))
-   y.append(int(x_and_y[1]))
-   i=i+1
-  for cord1 in range(0, 8):
-   for cord2 in range(0, 8):
-    if cord1 == cord2:
-     continue
-    if abs(x[cord1]-x[cord2])==abs(y[cord1]-y[cord2]) or (x[cord2]==x[cord1] or y[cord2] == y[cord1]):
-     a = 'YES'
-     break
-  print(a)
+x=[]
+y=[]
+coordinates=[]
+i=0
+while i < 8 :
+    coordinates.append(input().split())
+    i=i+1
+a=0    
+for a in range(0,8):
+    x.append(int(coordinates[a][0]))
+    y.append(int(coordinates[a][1]))
+
+yes="NO"
+    
+for j in range(0,8):
+    for f in range(j+1,8):
+        if (abs(x[j]-x[f])!=abs(y[j]-y[f])) and (x[j]!=x[f]) and (y[j]!=y[f]):
+            no="NO"
+        else:
+            yes="YES"
+print(yes)

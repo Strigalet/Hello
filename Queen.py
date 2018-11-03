@@ -10,12 +10,10 @@ for a in range(0,8):
     x.append(int(coordinates[a][0]))
     y.append(int(coordinates[a][1]))
 
-yes="NO"
+res="NO"
     
 for j in range(0,8):
     for f in range(j+1,8):
-        if (abs(x[j]-x[f])!=abs(y[j]-y[f])) and (x[j]!=x[f]) and (y[j]!=y[f]):
-            no="NO"
-        else:
-            yes="YES"
-print(yes)
+        if (abs(x[j]-x[f])==abs(y[j]-y[f])) or (x[j]==x[f]) or (y[j]==y[f]):
+            res="YES"
+print(res)

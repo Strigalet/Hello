@@ -12,7 +12,11 @@ print("""
 
 import re
 def Delete(s,n,l):
-    return (s[:n] + s[l+n:])
+    if n < 0 and abs(n) < l:
+        b=len(s)+n
+        return (s[:b]+s[l+b:])
+    else:
+        return (s[:n] + s[l+n:])
     
         
     
@@ -58,50 +62,50 @@ print(Delete(sentence,position,length))
 
 answer=input("print 'stop' if u want to stop the prog:  ")
 while answer!="stop":
-    change_everything=input("print 'everything' if u want to change everything: ")
-    if change_everything=='everything':
+    change_everything=input("print '1' if u want to change everything: ")
+    if change_everything=='1':
         sentence=input("Print your sentence: ")
         position= valid_position()
         length= valid_length()
         print(Delete(sentence,position,length))
         answer=input("print 'stop' if u want to stop the prog:  ")
     else:
-        change_length=input("print 'length' if u want to change length: ")
-        change_position=input("print 'position' if u want to change position: ")
-        change_sentence=input("print 'sentence' if u want to change sentence: ")
-        if change_length=='length' and change_position=='position' and change_sentence=='sentence':
-            print("You could achieve the same just by typing 'everything' earlier...")
+        change_length=input("print '2' if u want to change length: ")
+        change_position=input("print '3' if u want to change position: ")
+        change_sentence=input("print '4' if u want to change sentence: ")
+        if change_length=='2' and change_position=='position' and change_sentence=='sentence':
+            print("You could achieve the same just by typing '1' earlier...")
             sentence=input("Print your sentence: ")
             position= valid_position()
             length= valid_length()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")
-        elif change_length=='length' and change_position=='position' and change_sentence!='sentence':
+        elif change_length=='2' and change_position=='3' and change_sentence!='4':
             position= valid_position()
             length= valid_length()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")    
-        elif change_length!='length' and change_position=='position' and change_sentence=='sentence':
+        elif change_length!='2' and change_position=='3' and change_sentence=='4':
             sentence=input("Print your sentence: ")
             position= valid_position()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")
-        elif change_length!='length' and change_position=='position' and change_sentence!='sentence':
+        elif change_length!='2' and change_position=='3' and change_sentence!='4':
             position= valid_position()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")   
-        elif change_length=='length' and change_position!='position' and change_sentence=='sentence':
+        elif change_length=='2' and change_position!='3' and change_sentence=='4':
             sentence=input("Print your sentence: ")
             while len(sentence) <= position or len(sentence) < abs(position):
                 sentence=input("the length of your sentence must not be less than value of position: ")
             length= valid_length()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")
-        elif change_length=='length' and change_position!='position' and change_sentence!='sentence':
+        elif change_length=='2' and change_position!='3' and change_sentence!='4':
             position= valid_length()
             print(Delete(sentence,position,length))
             answer=input("print 'stop' if u want to stop the prog:  ")
-        elif change_length!='length' and change_position!='position' and change_sentence=='sentence':
+        elif change_length!='2' and change_position!='3' and change_sentence=='4':
             sentence=input("Print your sentence: ")
             while len(sentence) <= position or len(sentence) < abs(position):
                 sentence=input("the length of your sentence must not be less than value of position: ")

@@ -61,6 +61,7 @@ pattern_float = r"^[-\d]\d*\.\d*$"
 g = 0
 w = coefs()
 a = set()
+less_than_abs_one=[-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1]
 for x0 in range(-1000000, 1000000, 100000):
     c = newtons_method(f, df, x0, 1e-5)
     a.add(c)
@@ -79,7 +80,6 @@ for x0 in range(-100, 100, 10):
 for x0 in range(-10, 10, 1):
     c = newtons_method(f, df, x0, 1e-5)
     a.add(c)
-less_than_abs_one=[-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1]
 for x0 in less_than_abs_one:
     c = newtons_method(f, df, x0, 1e-5)
     a.add(c)
@@ -114,6 +114,9 @@ while answer != 'stop':
         c = newtons_method(f, df, x0, 1e-5)
         a.add(c)
     for x0 in range(-10, 10, 1):
+        c = newtons_method(f, df, x0, 1e-5)
+        a.add(c)
+    for x0 in less_than_abs_one:
         c = newtons_method(f, df, x0, 1e-5)
         a.add(c)
     if (len(a) == 1 and None in a) or (len(a) == 0):

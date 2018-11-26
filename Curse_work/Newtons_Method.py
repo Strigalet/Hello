@@ -9,6 +9,9 @@ def coefs():
     except ValueError:
         print("Введіть коректні дані")
         return coefs()
+    if n < 0:
+        print("Введіть коректні дані")
+        return coefs()
     i = n
     while len(cfs) <= n:
         print("Введіть коефіцієнт до відповідного елементу зі степенню: ", i)

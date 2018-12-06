@@ -1,6 +1,5 @@
 import re
 
-
 def coefs():
     global n
     cfs = []
@@ -9,7 +8,7 @@ def coefs():
     except ValueError:
         print("Enter the correct data")
         return coefs()
-    if n < 0 or n >50:
+    if n < 0 or n >50 :
         print("Enter the correct data")
         return coefs()
     if n < 0:
@@ -27,7 +26,6 @@ def coefs():
         i = i - 1
     cfs.reverse()
     return cfs
-
 
 def dx(f, x):
     return abs(f(x, g, w))
@@ -96,7 +94,6 @@ def real():
                     print("x=", i)
         else:
             print("Infinite number of roots")
-
 
 
 pattern_int = r"^[-\d]\d*$"

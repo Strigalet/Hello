@@ -11,9 +11,6 @@ def coefs():
     if n < 0 or n >50 :
         print("Enter the correct data")
         return coefs()
-    if n < 0:
-        print("Введіть коректні дані")
-        return coefs()
     i = n
     while len(cfs) <= n:
         print("Enter the coefficient to the corresponding item with the power of: ", i)

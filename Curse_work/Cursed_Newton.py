@@ -93,7 +93,7 @@ def real():
             print("Infinite number of roots")
 
 
-pattern_int = r"^[-\d]\d*$"
+pattern_int = r"^[-\d]?\d+$"
 pattern_float = r"^[-\d]\d*\.\d*$"
 less_than_abs_one=[-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1]
 real()
